@@ -1,5 +1,5 @@
 package linkedlist;
-
+	
 public class Basics {
 	
 	static class Node{

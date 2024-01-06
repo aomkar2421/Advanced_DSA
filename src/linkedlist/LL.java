@@ -43,6 +43,17 @@ public class LL {
 		}
 		System.out.print("END");
 	}
+	
+	
+	void displayRev(Node node) {
+		Node temp = head;
+		if (temp == null) {
+			return;
+		}
+		displayRev(node.next);
+		System.out.println(node.val);
+	}
+	
 
 	public void addLast(int val) {
 		Node node = new Node(val);

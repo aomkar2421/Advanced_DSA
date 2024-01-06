@@ -28,10 +28,12 @@ public class Main {
 		System.out.println("Last Value"+b);
 		list.display();
 
-		System.out.println("\nDelete At Index");
+		System.out.println("\nDelete At Index 3");
 		list.display();
 		int c = list.deleteAtIndex(3);
 		System.out.println(c);
 		list.display();
+		
+		
 	}
 }
