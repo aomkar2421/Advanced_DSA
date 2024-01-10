@@ -31,6 +31,8 @@ public class LL {
 
 		if (tail==null) {
 			tail = node;
+			size++;
+			return;
 		}
 		size++;
 	}
@@ -61,6 +63,8 @@ public class LL {
 		tail = 	node;
 		if (tail == null) {
 			addFirst(val);
+			size++;
+			return;
 		}
 		size++;
 	}
