@@ -85,11 +85,13 @@ public class CLL {
 			insert(value);
 			return;
 		}
-
 		
+		Node node = new Node(value);
+		Node prev = getNode(index-1);
+		node.next = prev.next;
+		prev.next = node;
+		size++;
 		
-		
-
 	}
 
 }

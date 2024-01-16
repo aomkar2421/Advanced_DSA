@@ -10,14 +10,14 @@ public class CLLBasics {
 		list.insert(36);
 		list.insert(56);
 		list.display();
-//		list.insertAtIndex(2 , 23);
-//		list.display();
-//		list.insertAtIndex(0 , 3);
-//		list.display();
-//		list.insertAtIndex(list.getSize()-1 , 99);
-//		list.display();
-//		list.insertAtIndex(5 , 83);
-//		list.display();
+		list.insertAtIndex(2 , 23);
+		list.display();
+		list.insertAtIndex(0 , 3);
+		list.display();
+		list.insertAtIndex(list.getSize()-1 , 99);
+		list.display();
+		list.insertAtIndex(5 , 83);
+		list.display();
 		
 //		System.out.println(list.getSize());
 //		System.out.println(list.getValue(2));
