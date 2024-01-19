@@ -45,8 +45,8 @@ public class LL {
 		}
 		System.out.print("END");
 	}
-	
-	
+
+
 	void displayRev(Node node) {
 		Node temp = head;
 		if (temp == null) {
@@ -55,7 +55,7 @@ public class LL {
 		displayRev(node.next);
 		System.out.println(node.val);
 	}
-	
+
 
 	public void addLast(int val) {
 		Node node = new Node(val);
@@ -68,6 +68,7 @@ public class LL {
 		}
 		size++;
 	}
+
 
 	public void insertAtIndex(int index, int val) {
 		if(index == 0) {
@@ -87,6 +88,7 @@ public class LL {
 		size++;
 	}
 
+
 	public int deleteFirst() {
 		int val = head.val;
 		head = head.next;
@@ -96,7 +98,8 @@ public class LL {
 		size--;
 		return val;
 	}
-	
+
+
 	public Node get(int index) {
 		Node temp = head;
 		for (int i = 1; i <= index; i++) {
@@ -104,7 +107,8 @@ public class LL {
 		}
 		return temp;
 	}
-	
+
+
 	int deleteLast(){
 		if (size == 1) {
 			return deleteFirst();
@@ -117,27 +121,29 @@ public class LL {
 		return val;
 	}
 
+
 	public int deleteAtIndex(int index) {
-		
+
 		if (index == 0) {
 			return deleteFirst();
 		}
 		if (index == size-1) {
 			return deleteLast();
 		}
-		
+
 		Node prevNode = get(index-1);
 		Node nextNode = get(index+1);
 		Node curNode = get(index);
 		curNode.next = null;
 		prevNode.next = nextNode;
-		
+
 		size--;
 		return curNode.val;
 	}
 
+
 	public int getSize() {
 		return size;
 	}
-	
+
 }
