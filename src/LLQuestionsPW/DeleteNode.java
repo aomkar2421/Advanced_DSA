@@ -48,5 +48,4 @@ public class DeleteNode {
 		}
 		System.out.println("END\n");
 	}
-	
 }

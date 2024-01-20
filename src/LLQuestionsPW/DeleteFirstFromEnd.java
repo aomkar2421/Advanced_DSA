@@ -1,6 +1,6 @@
 package LLQuestionsPW;
 
-public class DeleteNodeFromEnd {
+public class DeleteFirstFromEnd {
 	Node head;
 	static class Node{
 		int val;
@@ -30,12 +30,12 @@ public class DeleteNodeFromEnd {
 		d.next = e;
 
 		display(a);
-		deleteNode(a , 3);
+		a = deleteNode(a , 2);
 		display(a);
 
 	}
 
-	private static void deleteNode(Node head,int number) {
+	private static Node deleteNode(Node head,int number) {
 		Node fast = head;
 		Node slow = head;
 
@@ -43,12 +43,16 @@ public class DeleteNodeFromEnd {
 			fast = fast.next;
 		}
 
+		if (fast == null) {
+			head = head.next;
+			return head;
+		}
 		while (fast.next != null) {
 			slow = slow.next;
 			fast = fast.next;
 		}
 		slow.next = slow.next.next;
-
+		return head;
 	}
 
 	static void display(Node head){
