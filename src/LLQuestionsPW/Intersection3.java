@@ -1,6 +1,6 @@
 package LLQuestionsPW;
 
-public class Intersection2 {
+public class Intersection3 {
 	Node head;
 	static class Node{
 		int val;
@@ -52,20 +52,16 @@ public class Intersection2 {
 
 		Node temp1 = head1;
 		Node temp2 = head2;
-		int def ;
+		int def = Math.abs(size1-size2);
 		
-		if (size1>size2) {
-			def = size1-size2;
-			for (int i = 0; i < def; i++) {
-				temp1 = temp1.next;
-			}
-		} else {
-			def = size2-size1;
-			for (int i = 0; i < def; i++) {
-				temp2 = temp2.next;
-			}
-		}
-		
+
+		for (int i = 0; i < def; i++) {
+            if (size1 > size2) {
+                temp1 = temp1.next;
+            } else {
+                temp2 = temp2.next;
+            }
+        }
 		
 
 		while (temp1 != null || temp2!=null) {

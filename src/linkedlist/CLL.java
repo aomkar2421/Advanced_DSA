@@ -28,9 +28,8 @@ public class CLL {
 			tail.next = node;
 			node.next = head;
 			tail = node;
-
+			size++;
 		}		
-		size++;
 	}
 
 
@@ -85,13 +84,13 @@ public class CLL {
 			insert(value);
 			return;
 		}
-		
+
 		Node node = new Node(value);
 		Node prev = getNode(index-1);
 		node.next = prev.next;
 		prev.next = node;
 		size++;
-		
+
 	}
 
 }
