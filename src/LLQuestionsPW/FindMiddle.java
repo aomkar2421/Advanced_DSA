@@ -1,7 +1,8 @@
 package LLQuestionsPW;
 
+import LLQuestionsPW.FindMiddle.Node;
 
-public class Template {
+public class FindMiddle {
 	Node head;
 	static class Node{
 		int val;
