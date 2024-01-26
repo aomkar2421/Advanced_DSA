@@ -1,8 +1,7 @@
 package LLQuestionsPW;
 
-import LLQuestionsPW.FindMiddle.Node;
 
-public class FindMiddle {
+public class FindLeftMiddle {
 	Node head;
 	static class Node{
 		int val;
@@ -20,35 +19,37 @@ public class FindMiddle {
 	}
 
 	public static void main(String[] args) {
-		Node a = new Node(50);
+		Node a = new Node(5);
 		Node b = new Node(51);
-		Node c = new Node(88);
+		Node c = new Node(8);
 		Node d = new Node(59);
 		Node e = new Node(17);
-		Node f = new Node(26);
+		Node f = new Node(7);
 
 		a.next = b;
 		b.next = c;
 		c.next = d;
 		d.next = e;
 		e.next = f;
-		
+
 		display(a);
-		System.out.println(getSize(a));
+		findleftMiddleNode(a);
+
+	}
+	
+	
+	static void findleftMiddleNode(Node head) {
+		Node slow = head;
+		Node fast = head;
 		
-	}
-
-
-	static int getSize(Node head) {
-		Node temp=head;
-		int size = 0;
-		while (temp!=null) {
-			size++;
-			temp = temp.next;
+		while (fast.next!=null && fast.next.next !=null) {
+			slow = slow.next;
+			fast = fast.next.next;
 		}
-		return size;
+		System.out.println(slow.val);
 	}
 
+	
 	static void display(Node head){
 		Node temp = head;
 		while (temp != null) {
@@ -57,5 +58,4 @@ public class FindMiddle {
 		}
 		System.out.println("END\n");
 	}
-
 }
