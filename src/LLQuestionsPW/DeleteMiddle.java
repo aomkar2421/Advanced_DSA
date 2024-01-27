@@ -33,6 +33,7 @@ public class DeleteMiddle {
 
 		display(a);
 		deleteMiddleNode(a);
+		display(a);
 
 	}
 	
@@ -40,11 +41,13 @@ public class DeleteMiddle {
 		Node slow = head;
 		Node fast = head;
 		
-		while ( fast.next !=null && fast!=null) {
+		while ( fast.next.next !=null && fast.next.next.next!=null) {
 			slow = slow.next;
 			fast = fast.next.next;
 		}
-		System.out.println(slow.val);
+
+		slow.next = slow.next.next;
+		
 	}
 
 	static void display(Node head){
