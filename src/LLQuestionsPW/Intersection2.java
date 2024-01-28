@@ -87,7 +87,7 @@ public class Intersection2 {
 		while (temp!=null) {
 			size++;
 			temp = temp.next;
-		}
+		}		
 		return size;
 	}
 

@@ -1,6 +1,6 @@
 package LLQuestionsPW;
 
-public class Cycle2 {
+public class CycleNode {
 	Node head;
 	static class Node{
 		int val;
@@ -35,11 +35,11 @@ public class Cycle2 {
 		f.next = g;
 		g.next = c;
 
-		boolean ans = findCycle(a);
+		boolean ans = findNode(a);
 		System.out.println(ans);
 	}
 
-	static boolean findCycle(Node head) {
+	static boolean findNode(Node head) {
 		Node slow = head;
 		Node fast = head;
 
