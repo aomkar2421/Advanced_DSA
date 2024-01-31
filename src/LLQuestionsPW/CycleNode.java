@@ -25,7 +25,7 @@ public class CycleNode {
 		Node d = new Node(59);
 		Node e = new Node(17);
 		Node f = new Node(7);
-		Node g = new Node(7);
+		Node g = new Node(88);
 
 		a.next = b;
 		b.next = c;
@@ -33,25 +33,47 @@ public class CycleNode {
 		d.next = e;
 		e.next = f;
 		f.next = g;
-		g.next = c;
+		g.next = f;
 
-		boolean ans = findNode(a);
+		int ans = findNode(a);
 		System.out.println(ans);
 	}
 
-	static boolean findNode(Node head) {
+	static int findNode(Node head) {
+		
+		if(head == null || head.next == null) {
+			return -1;
+		}
+		
 		Node slow = head;
 		Node fast = head;
 
-		while ( fast != null) {
+		while ( fast != null && fast.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
 			if (fast == slow) {
 				break;
 			}
 		}		
+		
+		
+		if (slow != fast) {
+			return -1;
+		}
+		
+//		System.out.println(slow.val+" "+fast.val);
+		slow = head;
+//		System.out.println(slow.val+" "+fast.val);
 
-		return false;
+		while (slow!=fast) {
+			slow=slow.next;
+			fast=fast.next;
+			if (slow==fast) {
+				return slow.val;
+			}
+		}
+
+		return -1;
 	}
 
 	static void display(Node head){
