@@ -44,31 +44,34 @@ public class OddEven {
 		
 		display(a1);
 
-		separeteLL(a1);
+		separateLL(a1);
 		
 	}
 
-	private static void separeteLL(Node head) {
-        Node temp = head;
-        Node e = new Node(2);
-        Node head1 = e;
-        Node o = new Node(1);
-        Node head2 = o;
-        
-        while (temp != null) {
-			if (temp.val%2 == 0) {
-				e.next = temp;
-				e = temp;
-			}else {		 
-				o.next = temp;
-				o = temp; 
-			}
-			temp = temp.next;
-		}
+	private static void separateLL(Node head) {
+	    Node temp = head;
+	    Node e = new Node(2);
+	    Node head1 = e;
+	    Node o = new Node(1);
+	    Node head2 = o;
 
-        display(head1.next);
-        display(head2.next);
-    }
+	    while (temp != null) {
+	        if (temp.val % 2 == 0) {
+	            e.next = temp;
+	            e = temp;
+	        } else if (temp.val % 2 == 1) {
+	            o.next = temp;
+	            o = temp;
+	        }
+	        Node nextTemp = temp.next; // Store next node before updating temp
+	        temp.next = null; // Disconnect the processed node
+	        temp = nextTemp; //
+	    }
+
+	    display(head1.next);
+	    display(head2.next);
+	}
+
 
 	static int getSize(Node head) {
 		Node temp=head;
