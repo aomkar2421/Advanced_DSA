@@ -32,8 +32,8 @@ public class CycleNode {
 		c.next = d;
 		d.next = e;
 		e.next = f;
-		f.next = g;
-		g.next = f;
+		f.next = c;
+		g.next = null;
 
 		int ans = findNode(a);
 		System.out.println(ans);
