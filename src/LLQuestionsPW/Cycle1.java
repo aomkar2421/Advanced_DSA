@@ -43,7 +43,6 @@ public class Cycle1 {
 		if(head == null || head.next == null){
             return false;
         }
-		
 		Node slow = head;
 		Node fast = head;
 
