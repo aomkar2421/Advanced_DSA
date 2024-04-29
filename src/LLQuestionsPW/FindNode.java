@@ -52,9 +52,11 @@ public class FindNode {
 		int m = size-index+1;
 		
 		Node temp1 = head;
+		
 		for (int i = 1; i < m; i++) {
 			temp1 = temp1.next;
 		}
+		
 		System.out.println(temp1.val);
 	}
 
